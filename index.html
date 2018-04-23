@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spiffy HERE map</title>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <!-- for mobile viewing performance -->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+</head>
+<body>
+    <div style="width: 800px; height: 600px" id="mappy"></div>
+
+</body>
+<script>
+    var platform = new H.service.Platform({
+        'app_id': 'zl5qEu1OBJaAPjtxuMui',
+        'app_code': 'DSnKHLv2bMlrwYk5L6Iv0w'
+    });
+
+    var defaultLayers = platform.createDefaultLayers();
+
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.normal.map,
+        {
+            zoom: 10,
+            center: { lat: 37.0, lng: -122.01 }
+        });
+    
+</script>
+</html>
