@@ -26,6 +26,12 @@
 
     var defaultLayers = platform.createDefaultLayers();
 
+    //Load up some KML from our GeoServer instance)
+    var reader = new H.data.kml.Reader("http://geoserver-route-molw.apps.thesteve0.openshiftworkshop.com/molw/wms/kml?layers=molw:birds");
+    reader.parse();
+
+    kmlLayer = reader.getLayer();
+
     var map = new H.Map(
         document.getElementById("mappy"),
         defaultLayers.normal.map,
@@ -33,6 +39,9 @@
             zoom: 10,
             center: { lat: 37.0, lng: -122.01 }
         });
+    map.addLayer(kmlLayer);
+
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
     
 </script>
 </html>
