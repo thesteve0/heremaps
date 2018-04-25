@@ -32,7 +32,7 @@
 
     var defaultLayers = platform.createDefaultLayers();
 
-    //Load up some KML from our GeoServer instance)
+    //Load up some KML from our GeoServer instance - not currently working because OpenShift router is messing with CORS
     var reader = new H.data.kml.Reader("http://geoserver-route-molw.apps.thesteve0.openshiftworkshop.com/molw/wms/kml?layers=molw:birds");
     reader.parse();
 
@@ -46,7 +46,7 @@
             center: { lat: 37.0, lng: -122.01 }
         });
     map.addLayer(kmlLayer);
-
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     var ui = H.ui.UI.createDefault(map, defaultLayers);
     
 </script>
