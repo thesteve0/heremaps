@@ -48,6 +48,11 @@
     map.addLayer(kmlLayer);
     var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     var ui = H.ui.UI.createDefault(map, defaultLayers);
-    
+
+    layer.getProvider().addEventListener('tap', function(ev) {
+        // Log map object data. They contain name, description (if present in
+        // KML) and the KML node itself.
+        console.log(ev.target.getData());
+    });
 </script>
 </html>
