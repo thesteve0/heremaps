@@ -33,7 +33,7 @@
     var defaultLayers = platform.createDefaultLayers();
 
     //Load up some KML from our GeoServer instance - not currently working because OpenShift router is messing with CORS
-    var reader = new H.data.kml.Reader("https://geoserver-route-molw.apps.thesteve0.openshiftworkshop.com/molw/wms/kml?layers=molw:birds");
+    var reader = new H.data.kml.Reader("https://geoserver-route-molw.apps.thesteve0.openshiftworkshop.com/molw/wms/kml?layers=molw:birds&mode=download");
     reader.parse();
 
     kmlLayer = reader.getLayer();
